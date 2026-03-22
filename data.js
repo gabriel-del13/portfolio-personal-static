@@ -75,8 +75,7 @@ const portfolioData = {
       "gallery": [
         { "src": "images/projects/gallery/catalogo-2.png", "caption": "Filtrado" },
         { "src": "images/projects/gallery/catalogo-3.png", "caption": "Busqueda" },
-        { "src": "images/projects/gallery/catalogo-4.png", "caption": "Detalles" },
-        { "src": "images/projects/gallery/catalogo-5.png", "caption": "Wishlist" }
+        { "src": "images/projects/gallery/catalogo-4.png", "caption": "Detalles" }
       ],
       "status": "completed",
       "featured": true,
