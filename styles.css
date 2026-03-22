@@ -636,6 +636,11 @@ img { max-width: 100%; display: block; }
 .modal-gallery-wrap {
   border-top: 1px solid var(--border);
   padding: 1.5rem 2rem;
+  display: none;
+}
+
+.modal-gallery-wrap.visible {
+  display: block;
 }
 
 .gallery-label {

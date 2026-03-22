@@ -115,6 +115,7 @@
 
       // Main image
       const mainImg = document.getElementById('modalMainImg');
+      mainImg.classList.remove('no-img');
       if (p.thumbnail) {
         mainImg.innerHTML = `<img src="${p.thumbnail}" alt="${p.title}" onerror="this.parentElement.classList.add('no-img')" />`;
       } else {
@@ -135,9 +136,9 @@
           thumb.addEventListener('click', () => openLightbox(item.src, item.caption));
           gallery.appendChild(thumb);
         });
-        galleryWrap.style.display = 'block';
+        galleryWrap.classList.add('visible');
       } else {
-        galleryWrap.style.display = 'none';
+        galleryWrap.classList.remove('visible');
       }
 
       document.getElementById('modalOverlay').classList.add('open');
