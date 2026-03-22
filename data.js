@@ -54,6 +54,13 @@ const portfolioData = {
       "short_description": "Utiliza el emulador JNES y despliegue en AWS Elastic Beanstalk.",
       "thumbnail": "images/projects/thumbnails/emuNES.png",
       "github_url": "https://github.com/gabriel-del13/emulador_nes_docker",
+      "gallery": [
+        { "src": "images/projects/gallery/emuNES-2.png", "caption": "Mario Bros 3" },
+        { "src": "images/projects/gallery/emuNES-3.png", "caption": "Kirby Adventure" },
+        { "src": "images/projects/gallery/emuNES-4.png", "caption": "Final Fantasy" },
+        { "src": "images/projects/gallery/emuNES-5.png", "caption": "Kid Icarus" },
+        { "src": "images/projects/gallery/emuNES-6.png", "caption": "Zelda" }
+      ],
       "status": "completed",
       "featured": true,
       "order": 2
@@ -65,6 +72,12 @@ const portfolioData = {
       "short_description": "Aplicación web Full Stack moderna desarrollada con Angular 18 y una API RESTful en Python/Django.",
       "thumbnail": "images/projects/thumbnails/catalogo.png",
       "github_url": "https://github.com/gabriel-del13/web_frontend_angular18",
+      "gallery": [
+        { "src": "images/projects/gallery/catalogo-2.png", "caption": "Filtrado" },
+        { "src": "images/projects/gallery/catalogo-3.png", "caption": "Busqueda" },
+        { "src": "images/projects/gallery/catalogo-4.png", "caption": "Detalles" },
+        { "src": "images/projects/gallery/catalogo-5.png", "caption": "Wishlist" }
+      ],
       "status": "completed",
       "featured": true,
       "order": 3
@@ -76,6 +89,10 @@ const portfolioData = {
       "short_description": "Monitor App utiliza Docker para verificar automáticamente el estado (uptime/downtime) de múltiples URLs.",
       "thumbnail": "images/projects/thumbnails/monitoreo.png",
       "github_url": "https://github.com/gabriel-del13/monitor-app",
+      "gallery": [
+        { "src": "images/projects/gallery/monitoreo-1.png", "caption": "Dashboard" },
+        { "src": "images/projects/gallery/monitoreo-2.png", "caption": "Add" }
+      ],
       "status": "completed",
       "featured": true,
       "order": 4
@@ -87,6 +104,10 @@ const portfolioData = {
       "short_description": "Mi primer proyecto web Full Stack. Un catálogo de productos desarrollado con Angular 18 y Django.",
       "thumbnail": "images/projects/thumbnails/catalogo-videojuegos.png",
       "github_url": "https://github.com/gabriel-del13/My-first-page-web",
+      "gallery": [
+        { "src": "images/projects/gallery/catalogo-videojuegos-1.png", "caption": "Busqueda" },
+        { "src": "images/projects/gallery/catalogo-videojuegos-2.png", "caption": "Detalles" }
+      ],
       "status": "completed",
       "featured": true,
       "order": 5
