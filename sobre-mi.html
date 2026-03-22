@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sobre Mí — Gabriel Del Cid</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <nav class="navbar">
+    <a href="index.html" class="nav-brand">Gabriel Del Cid</a>
+    <div class="nav-links">
+      <a href="index.html" class="nav-link">Inicio</a>
+      <a href="sobre-mi.html" class="nav-link active">Sobre Mí</a>
+      <a href="proyectos.html" class="nav-link">Proyectos</a>
+    </div>
+    <button class="hamburger" id="hamburger" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="index.html" class="nav-link">Inicio</a>
+    <a href="sobre-mi.html" class="nav-link active">Sobre Mí</a>
+    <a href="proyectos.html" class="nav-link">Proyectos</a>
+  </div>
+
+  <!-- ABOUT -->
+  <section class="section about-section">
+    <div class="container about-inner">
+      <div class="about-photo animate-fade-up">
+        <div class="about-img-wrap">
+          <img src="images/perfil.jpg" alt="Gabriel Del Cid"
+            onerror="this.src='https://ui-avatars.com/api/?name=Gabriel+Del+Cid&background=1a2744&color=38bdf8&size=400'" />
+        </div>
+      </div>
+      <div class="about-text animate-fade-up delay-1">
+        <h2 class="section-title left">Sobre Mí</h2>
+        <p class="accent about-role">Desarrollador de AWS</p>
+        <p class="about-bio">
+          Cuento con experiencia en Python y JavaScript, especializado en arquitectura back-end
+          y trazando mi camino hacia la ciberseguridad.
+        </p>
+        <p class="about-bio">
+          Actualmente certificándome en AWS Developer Associate, apasionado por la
+          computación en la nube y el diseño de aplicaciones escalables.
+        </p>
+        <div class="about-links">
+          <a href="mailto:gabriel13.dev@gmail.com" class="btn btn-outline">Enviar correo</a>
+          <a href="https://github.com/gabriel-del13" target="_blank" rel="noopener" class="btn btn-ghost">GitHub</a>
+          <a href="https://www.linkedin.com/in/gabriel-delcid-13200x" target="_blank" rel="noopener" class="btn btn-ghost">LinkedIn</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SKILLS -->
+  <section class="section skills-section">
+    <div class="container">
+      <h2 class="section-title">Mis <span class="accent">Habilidades</span></h2>
+      <div class="skills-grid" id="skillsGrid"></div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container footer-inner">
+      <div class="footer-links">
+        <a href="index.html">Inicio</a>
+        <a href="sobre-mi.html">Sobre Mí</a>
+        <a href="proyectos.html">Proyectos</a>
+      </div>
+      <div class="footer-social">
+        <a href="https://github.com/gabriel-del13" target="_blank" rel="noopener">GitHub</a>
+        <a href="https://www.linkedin.com/in/gabriel-delcid-13200x" target="_blank" rel="noopener">LinkedIn</a>
+      </div>
+    </div>
+    <div class="footer-copy">© 2026 Gabriel Del Cid. Todos los derechos reservados.</div>
+  </footer>
+
+  <script src="data.js"></script>
+  <script>
+    document.getElementById('hamburger').addEventListener('click', () => {
+      document.getElementById('mobileMenu').classList.toggle('open');
+    });
+
+    const proficiencyLabel = { advanced: 'Avanzado', intermediate: 'Intermedio', beginner: 'Principiante' };
+    const categoryLabel = {
+      frontend: 'Frontend', backend: 'Backend', database: 'Database',
+      devops: 'DevOps', other: 'Other', tools: 'Tools'
+    };
+
+    const grid = document.getElementById('skillsGrid');
+    portfolioData.skills.forEach(s => {
+      grid.innerHTML += `
+        <div class="skill-card">
+          <div class="skill-icon">
+            <img src="${s.icon}" alt="${s.name}" onerror="this.style.display='none'" />
+          </div>
+          <div class="skill-info">
+            <span class="skill-cat">${(categoryLabel[s.category] || s.category).toUpperCase()}</span>
+            <span class="skill-name">${s.name}</span>
+            <span class="skill-level ${s.proficiency}">Nivel: ${proficiencyLabel[s.proficiency] || s.proficiency}</span>
+          </div>
+        </div>`;
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Gabriel Del Cid — Portafolio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav class="navbar">
+    <a href="index.html" class="nav-brand">Gabriel Del Cid</a>
+    <div class="nav-links">
+      <a href="index.html" class="nav-link active">Inicio</a>
+      <a href="sobre-mi.html" class="nav-link">Sobre Mí</a>
+      <a href="proyectos.html" class="nav-link">Proyectos</a>
+    </div>
+    <button class="hamburger" id="hamburger" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="index.html" class="nav-link active">Inicio</a>
+    <a href="sobre-mi.html" class="nav-link">Sobre Mí</a>
+    <a href="proyectos.html" class="nav-link">Proyectos</a>
+  </div>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="dot-grid"></div>
+    <div class="hero-glow"></div>
+    <div class="container hero-inner">
+      <div class="hero-text animate-fade-up">
+        <p class="hero-label">PORTAFOLIO</p>
+        <h1 class="hero-title">Hola, soy <span class="accent">Gabriel Del Cid</span></h1>
+        <h2 class="hero-subtitle">Desarrollador de AWS</h2>
+        <p class="hero-bio">
+          Cuento con experiencia en Python y JavaScript, especializado en
+          arquitectura back-end y trazando mi camino hacia la ciberseguridad.
+        </p>
+        <p class="hero-bio">
+          Actualmente certificándome en AWS Developer Associate,
+          apasionado por la computación en la nube y el diseño de
+          aplicaciones escalables.
+        </p>
+        <div class="hero-btns">
+          <a href="proyectos.html" class="btn btn-primary">Ver Proyectos</a>
+        </div>
+      </div>
+      <div class="hero-photo animate-fade-up delay-2">
+        <div class="photo-ring">
+          <img src="images/perfil.jpg" alt="Gabriel Del Cid" onerror="this.src='https://ui-avatars.com/api/?name=Gabriel+Del+Cid&background=1a2744&color=38bdf8&size=300'" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FEATURED PROJECTS -->
+  <section class="section projects-section">
+    <div class="container">
+      <h2 class="section-title">Proyectos <span class="accent">Destacados</span></h2>
+      <div class="projects-grid" id="featuredProjects"></div>
+      <div class="section-cta">
+        <a href="proyectos.html" class="btn btn-primary">Ver Todos los Proyectos</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container footer-inner">
+      <div class="footer-links">
+        <a href="index.html">Inicio</a>
+        <a href="sobre-mi.html">Sobre Mí</a>
+        <a href="proyectos.html">Proyectos</a>
+      </div>
+      <div class="footer-social">
+        <a href="https://github.com/gabriel-del13" target="_blank" rel="noopener">GitHub</a>
+        <a href="https://www.linkedin.com/in/gabriel-delcid-13200x" target="_blank" rel="noopener">LinkedIn</a>
+      </div>
+    </div>
+    <div class="footer-copy">© 2026 Gabriel Del Cid. Todos los derechos reservados.</div>
+  </footer>
+
+  <script src="data.js"></script>
+  <script>
+    // Hamburger
+    document.getElementById('hamburger').addEventListener('click', () => {
+      document.getElementById('mobileMenu').classList.toggle('open');
+    });
+
+    // Featured projects (first 3)
+    const featured = portfolioData.projects.filter(p => p.featured).slice(0, 3);
+    const grid = document.getElementById('featuredProjects');
+    featured.forEach(p => {
+      grid.innerHTML += `
+        <div class="project-card">
+          <div class="project-thumb">
+            <img src="${p.thumbnail}" alt="${p.title}" onerror="this.parentElement.classList.add('no-img')" />
+          </div>
+          <div class="project-info">
+            <h3>${p.title}</h3>
+            <p>${p.short_description}</p>
+            <div class="project-links">
+              <a href="${p.github_url}" target="_blank" rel="noopener" class="btn btn-outline btn-sm">GitHub →</a>
+            </div>
+          </div>
+        </div>`;
+    });
+  </script>
+</body>
+</html>
